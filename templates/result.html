@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <h2>{{ error }}</h2>
+        {% else %}
+            <h2>Weather in {{ city }}</h2>
+            <p>🌡️ Temperature: {{ weather.temperature }}°C</p>
+            <p>💨 Wind Speed: {{ weather.windspeed }} km/h</p>
+        {% endif %}
+        <a href="/">🔙 Search again</a>
+    </div>
+</body>
+</html>
